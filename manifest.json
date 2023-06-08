@@ -1,12 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Notion Favicon Fixer",
-  "version": "1.0",
-  "icons": {"128": "icon.jpeg"},
+  "name": "Notion Favicon and Title Fixer",
+  "version": "1.1",
   "content_scripts": [
     {
       "matches": ["https://notion.so/*", "https://www.notion.so/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "favicon16.png",
+    "32": "favicon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+    }
 }
