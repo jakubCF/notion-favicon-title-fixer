@@ -15,8 +15,17 @@ const observer = new MutationObserver((mutationList) => {
   })
 })
 
+const observerTitle = new MutationObserver((mutationList) => {
+  mutationList.forEach((mutation) => {
+    if (mutation.target.startsWith("Notion")) {
+      document.title = "Notion - " + document.title;
+    }
+  })
+})
+
 const options = {
   attributeFilter: ['href'],
 };
 
 observer.observe(getFaviconDomEl(), options);
+observerTitle.observe(document.title);
