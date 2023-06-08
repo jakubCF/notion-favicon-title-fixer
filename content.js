@@ -1,6 +1,7 @@
 const FAVICON_URL = "https://www.notion.so/images/favicon.ico";
 
 const getFaviconDomEl = () => document.querySelector("link[rel~='icon']");
+var getTitle = document.querySelector('title');
 
 const setFavicon = () => {
   const linkEl = getFaviconDomEl();
@@ -28,4 +29,4 @@ const options = {
 };
 
 observer.observe(getFaviconDomEl(), options);
-observerTitle.observe(document.title);
+observerTitle.observe(getTitle());
