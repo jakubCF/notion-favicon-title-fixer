@@ -1,3 +1,5 @@
+console.log("[Notion Fixer] Content script loaded");
+
 const FAVICON_URL = "https://www.notion.so/images/favicon.ico";
 
 const getFaviconDomEl = () => document.querySelector("link[rel~='icon']");
@@ -12,6 +14,7 @@ const observer = new MutationObserver((mutationList) => {
   mutationList.forEach((mutation) => {
     if (mutation.target.href !== FAVICON_URL) {
       setFavicon();
+      console.log("favicon changed");
     }
   })
 })
@@ -20,6 +23,7 @@ const observerTitle = new MutationObserver((mutationList) => {
   mutationList.forEach((mutation) => {
     if (!mutation.target.textContent.startsWith("Notion")) {
       document.title = "Notion - " + document.title;
+      console.log("title changed");
     }
   })
 })

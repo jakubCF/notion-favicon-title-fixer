@@ -2,9 +2,10 @@
   "manifest_version": 3,
   "name": "Notion Favicon and Title Fixer",
   "version": "1.1",
+  "host_permissions": ["https://notion.so/*", "https://www.notion.so/*", "https://app.notion.com/*", "https://www.notion.com/*", "https://notion.com/*"],
   "content_scripts": [
     {
-      "matches": ["https://notion.so/*", "https://www.notion.so/*"],
+      "matches": ["https://notion.so/*", "https://www.notion.so/*", "https://app.notion.com/*", "https://www.notion.com/*", "https://notion.com/*"],
       "js": ["content.js"]
     }
   ],
